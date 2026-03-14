@@ -1,0 +1,28 @@
+/** @type {import('tailwindcss').Config} */
+export default {
+  content: [
+    './resources/**/*.blade.php',
+    './resources/**/*.js',
+    './resources/**/*.vue',
+  ],
+  theme: {
+    extend: {
+      colors: {
+        primary: {
+          50:  '#eff6ff',
+          500: '#3b82f6',
+          600: '#2563eb',
+          700: '#1d4ed8',
+        },
+        school: {
+          blue: '#1e3a8a',
+          gold: '#f59e0b',
+        }
+      },
+      fontFamily: {
+        sans: ['Inter', 'sans-serif'],
+      },
+    },
+  },
+  plugins: [],
+}
