@@ -15,30 +15,22 @@ return [
     |
     */
 
+
+
+
     'guards' => [
-        'web' => [
-            'driver' => 'session',
-            'provider' => 'users',
-        ],
+        'web' => ['driver' => 'session', 'provider' => 'users'],
 
         // Tambahkan ini:
-        'student' => [
-            'driver' => 'session',
-            'provider' => 'students',
-        ],
+        'student' => ['driver' => 'session', 'provider' => 'students'],
+        'admin' => ['driver' => 'session', 'provider' => 'admins'],
     ],
 
     'providers' => [
-        'users' => [
-            'driver' => 'eloquent',
-            'model' => App\Models\User::class,
-        ],
-
+        'users' => ['driver' => 'eloquent', 'model' => App\Models\User::class],
         // Tambahkan ini:
-        'students' => [
-            'driver' => 'eloquent',
-            'model' => App\Models\Student::class,
-        ],
+        'students' => ['driver' => 'eloquent', 'model' => App\Models\Student::class],
+        'admins' => ['driver' => 'eloquent', 'model' => App\Models\Admin::class],
     ],
 
     /*

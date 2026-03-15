@@ -5,6 +5,39 @@ use App\Http\Controllers\LandingController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\AkademikController;
+use App\Http\Controllers\Admin\AdminAuthController;
+use App\Http\Controllers\Admin\AdminDashboardController;
+use App\Http\Controllers\Admin\PengumumanController;
+use App\Http\Controllers\Admin\PesanController;
+use App\Http\Controllers\Admin\StudentController;
+
+
+// ===== ADMIN =====
+Route::prefix('admin')->name('admin.')->group(function () {
+
+    // Login
+    Route::get('/login', [AdminAuthController::class, 'showLogin'])->name('login');
+    Route::post('/login', [AdminAuthController::class, 'login'])->name('login.post');
+    Route::post('/logout', [AdminAuthController::class, 'logout'])->name('logout');
+
+
+    // Protected
+    Route::middleware('admin')->group(function () {
+        Route::get('/dashboard', [AdminDashboardController::class, 'index'])->name('dashboard');
+
+        // Pengumuman CRUD
+        Route::resource('pengumuman', PengumumanController::class);
+
+        // Pesan
+        Route::get('/pesan', [PesanController::class, 'index'])->name('pesan.index');
+        Route::patch('/pesan/{pesan}/baca', [PesanController::class, 'tandaiBaca'])->name('pesan.baca');
+        Route::delete('/pesan/{pesan}', [PesanController::class, 'destroy'])->name('pesan.destroy');
+
+        // Data Student
+        Route::get('/students', [StudentController::class, 'index'])->name('students.index');
+    });
+});
+
 
 // ===== LANDING =====
 Route::get('/', [LandingController::class, 'home'])->name('home');
@@ -30,7 +63,8 @@ Route::middleware('auth:student')->prefix('dashboard')->name('dashboard.')->grou
     Route::get('/ppdb/bobot-nilai', [DashboardController::class, 'bobotNilai'])->name('ppdb.bobot-nilai');
     Route::get('/elearning', [DashboardController::class, 'elearning'])->name('elearning');
     Route::get('/layanan', [DashboardController::class, 'layanan'])->name('layanan');
-    Route::get('/kontak', [DashboardController::class, 'kontak'])->name('kontak');
+    Route::get('/kontak', [DashboardController::class, 'kontak'])->name('kontak');         
+    Route::post('/kontak', [DashboardController::class, 'kontakStore'])->name('kontak.store'); 
 
     // Akademik sub-routes
     Route::prefix('akademik')->name('akademik.')->group(function () {

@@ -128,24 +128,25 @@
         <a href="{{ route('dashboard.pengumuman') }}" class="text-blue-600 text-xs font-semibold hover:underline">Lihat semua →</a>
     </div>
     <div class="space-y-2">
-        @foreach([
-            ['🏆', 'Juara 1 LKS Provinsi Jawa Barat 2025', 'Prestasi', '15 April 2025'],
-            ['📝', 'Jadwal UAS Semester Genap 2024/2025', 'Akademik', '10 April 2025'],
-            ['🎉', 'Peringatan Hari Pendidikan Nasional', 'Acara', '02 Mei 2025'],
-        ] as $p)
-        <div class="flex items-center gap-3 p-3 rounded-xl hover:bg-slate-50 transition cursor-pointer">
-            <span class="text-xl">{{ $p[0] }}</span>
+        @forelse($pengumumanTerbaru as $p)
+        <div class="flex items-center gap-3 p-3 rounded-xl hover:bg-slate-50 transition">
+            <span class="text-xl">{{ $p->icon }}</span>
             <div class="flex-1">
-                <div class="text-sm font-semibold text-slate-800">{{ $p[1] }}</div>
+                <div class="text-sm font-semibold text-slate-800">{{ $p->judul }}</div>
                 <div class="flex items-center gap-2 mt-0.5">
-                    <span class="text-xs text-blue-600 font-medium">{{ $p[2] }}</span>
+                    <span class="text-xs text-blue-600 font-medium">{{ $p->kategori }}</span>
                     <span class="text-slate-300">•</span>
-                    <span class="text-xs text-slate-400">{{ $p[3] }}</span>
+                    <span class="text-xs text-slate-400">{{ $p->tanggal->format('d M Y') }}</span>
                 </div>
             </div>
             <span class="text-slate-300 text-sm">→</span>
         </div>
-        @endforeach
+        @empty
+        <div class="text-center py-6 text-slate-400 text-sm">
+            <div class="text-3xl mb-2">📭</div>
+            Belum ada pengumuman
+        </div>
+        @endforelse
     </div>
 </div>
 
