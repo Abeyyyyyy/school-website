@@ -31,7 +31,7 @@
                     <div class="text-blue-200 text-sm mt-1">Guru & Staff</div>
                 </div>
                 <div class="bg-white/10 backdrop-blur rounded-2xl p-5 text-center border border-white/10">
-                    <div class="text-3xl font-extrabold text-yellow-400">7</div>
+                    <div class="text-3xl font-extrabold text-yellow-400">6</div>
                     <div class="text-blue-200 text-sm mt-1">Jurusan Unggulan</div>
                 </div>
                 <div class="bg-white/10 backdrop-blur rounded-2xl p-5 text-center border border-white/10">
@@ -51,7 +51,7 @@
             <p class="text-gray-500 mt-2">Pilih jurusan sesuai minat dan bakat kamu</p>
         </div>
         <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-            @foreach([['RPL','💻','Rekayasa Perangkat Lunak'],['TKJ','🌐','Teknik Komputer & Jaringan'],['DKV','🎨','Desain Komunikasi Visual'],['TOI','⚙️','Teknik Otomasi Industri'],['TAV','📡','Teknik Audio Video'],['TITL','⚡','Teknik Instalasi Tenaga Listrik'],['TKTL','🏗️','Teknik Konstruksi & Tata Lingkungan']] as $j)
+            @foreach([['RPL','💻','Rekayasa Perangkat Lunak'],['TKJ','🌐','Teknik Komputer & Jaringan'],['DKV','🎨','Desain Komunikasi Visual'],['TOI','⚙️','Teknik Otomasi Industri'],['TAV','📡','Teknik Audio Video'],['TITL','⚡','Teknik Instalasi Tenaga Listrik']] as $j)
             <div class="bg-gray-50 hover:bg-blue-50 border border-gray-200 hover:border-blue-300 rounded-2xl p-5 text-center transition cursor-pointer group">
                 <div class="text-3xl mb-2">{{ $j[1] }}</div>
                 <div class="font-bold text-blue-800 text-sm">{{ $j[0] }}</div>

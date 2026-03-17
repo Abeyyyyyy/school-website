@@ -18,7 +18,7 @@ class LandingController extends Controller
             ['kode' => 'TOI',  'nama' => 'Teknik Otomasi Industri',       'icon' => '⚙️', 'desc' => 'Mempelajari sistem kontrol dan otomasi yang digunakan di industri.'],
             ['kode' => 'TAV',  'nama' => 'Teknik Audio Video',            'icon' => '📡', 'desc' => 'Mempelajari ilmu elektronika arus lemah, audio, dan video.'],
             ['kode' => 'TITL', 'nama' => 'Teknik Instalasi Tenaga Listrik','icon' => '⚡', 'desc' => 'Mempelajari instalasi listrik arus kuat dan sistem kelistrikan.'],
-            ['kode' => 'TKTL', 'nama' => 'Teknik Konstruksi & Tata Lingkungan','icon' => '🏗️','desc' => 'Mempelajari konstruksi bangunan dan perencanaan tata lingkungan.'],
+            
         ];
 
         return view('landing.jurusan', compact('jurusan'));

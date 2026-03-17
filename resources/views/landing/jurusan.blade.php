@@ -9,7 +9,7 @@
     <div class="text-center mb-14">
         <span class="text-blue-600 font-semibold text-sm uppercase tracking-widest">Program Keahlian</span>
         <h1 class="text-4xl font-extrabold text-gray-900 mt-2">Jurusan di SMKN 4 Bandung</h1>
-        <p class="text-gray-500 mt-3 max-w-2xl mx-auto">7 program keahlian yang dirancang sesuai kebutuhan industri modern, siap mencetak tenaga profesional.</p>
+        <p class="text-gray-500 mt-3 max-w-2xl mx-auto">6 program keahlian yang dirancang sesuai kebutuhan industri modern, siap mencetak tenaga profesional.</p>
     </div>
 
     {{-- Grid Jurusan --}}
