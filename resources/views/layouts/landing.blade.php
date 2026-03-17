@@ -59,7 +59,7 @@
     </main>
 
     {{-- FOOTER --}}
-    <footer class="bg-blue-900 text-white mt-20">
+    <footer class="bg-blue-800 text-white">
         <div class="max-w-7xl mx-auto px-4 py-12">
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <div>
